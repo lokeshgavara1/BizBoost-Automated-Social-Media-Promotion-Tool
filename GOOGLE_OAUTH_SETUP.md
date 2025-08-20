@@ -25,8 +25,8 @@ Create a `.env` file in the backend directory with the following variables:
 
 ```env
 # Google OAuth 2.0 Credentials
-GOOGLE_CLIENT_ID=456969076971-muo6t0bv9smg0m27b46urtrb7agd4m4f.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=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
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
 GOOGLE_REDIRECT_URI=http://localhost:5000/api/auth/google/callback
 
 # JWT Secret
@@ -42,7 +42,7 @@ MONGODB_URI=mongodb://localhost:27017/bizboost
 PORT=5000
 ```
 
-**Important**: For local development, use `http://localhost:5000/api/auth/google/callback` as the redirect URI.
+**Important**: Replace `your_google_client_id_here` and `your_google_client_secret_here` with your actual Google OAuth credentials.
 
 ### 3. Google Cloud Console Configuration
 
@@ -52,7 +52,7 @@ PORT=5000
 4. Go to "Credentials" → "OAuth 2.0 Client IDs"
 5. Add the following authorized redirect URIs:
    - `http://localhost:5000/api/auth/google/callback` (for local development)
-   - `https://www.example.com` (for production)
+   - `https://yourdomain.com/api/auth/google/callback` (for production)
 
 ### 4. Start the Backend Server
 
@@ -140,42 +140,5 @@ The frontend will start on port 3000.
 1. Update `GOOGLE_REDIRECT_URI` to your production domain
 2. Use environment variables for all sensitive data
 3. Enable HTTPS
-4. Use a production database for token storage
-5. Implement proper error logging and monitoring
-
-## File Structure
-
-```
-backend/
-├── controllers/
-│   └── googleAuthController.js    # Google OAuth logic
-├── routes/
-│   └── googleAuth.js             # OAuth routes
-├── models/
-│   └── User.js                   # Updated user model
-├── config.env                    # Environment variables
-└── index.js                     # Main server file
-
-frontend/
-├── src/
-│   ├── pages/
-│   │   ├── Login.jsx            # Updated with Google button
-│   │   └── GoogleAuthCallback.jsx # OAuth callback handler
-│   ├── context/
-│   │   └── AuthContext.jsx      # Updated for Google OAuth
-│   └── styles/
-│       └── Auth.css             # Google button styles
-└── App.js                       # Updated routing
-```
-
-## Support
-
-If you encounter any issues:
-
-1. Check the browser console for frontend errors
-2. Check the backend console for server errors
-3. Verify all environment variables are set correctly
-4. Ensure Google Cloud Console configuration matches your setup
-5. Check that all required dependencies are installed
-
-The implementation is now complete and ready for testing!
+4. Use a production MongoDB instance
+5. Set up proper CORS configuration

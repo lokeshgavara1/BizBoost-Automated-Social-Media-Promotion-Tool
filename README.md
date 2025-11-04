@@ -307,3 +307,7 @@ For issues, questions, or contributions, please open an issue on the repository.
 
 ---
 
+## Author
+### Gavara Lokesh
+📧 lokeshgavara1@gmail.com
+🔗 LinkedIn Profile
